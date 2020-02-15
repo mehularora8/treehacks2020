@@ -13,7 +13,7 @@ body{
 #navigation{
 	width: 20vw;
 	height: 100vh;
-	background-image: linear-gradient(to bottom right, #02aab0, #00cdac);
+	background-image: linear-gradient(to bottom right, #ec008c, #fc6767);
 }
 
 #info{
@@ -37,10 +37,11 @@ body{
 }
 
 #metrics{
-	width: 50vw;
+	width: 70vw;
 	height: 60vh;
 	border: 1px solid black;
 	display: inline-block;
+	margin-top: 15vh;
 }
 
 #dashboard-heading{
