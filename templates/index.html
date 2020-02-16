@@ -17,13 +17,13 @@
 			<div id = "data">
 				<div id = "metrics-container">
 					<div id = "metrics">
-						{% for trashcan in bins%}
+						{% for id in bins%}
 						<div class = "dustbin">
-							<div class = "dustbin-header">Trashcan {{ trashcan.dustbin_id }}</div>
+							<div class = "dustbin-header">Trashcan {{ id }}</div>
 							<div class = "dustbin-data">
-								Trash: {{ trashcan.trash }}<br>
-								Recycle: {{ trashcan.recycling }}<br>
-								Compost: {{ trashcan.compost }}<br>
+								Trash: {{ bins[id].trash }}<br>
+								Recycle: {{ bins[id].recycling }}<br>
+								Compost: {{ bins[id].compost }}<br>
 							</div>
 						</div>
 						{%endfor%}
