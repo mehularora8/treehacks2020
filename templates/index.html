@@ -19,7 +19,7 @@
 					<div id = "metrics">
 						{% for trashcan in bins%}
 						<div class = "dustbin">
-							<div class = "dustbin-header">ID: {{ trashcan.dustbin_id }}</div>
+							<div class = "dustbin-header">Trashcan {{ trashcan.dustbin_id }}</div>
 							<div class = "dustbin-data">
 								Trash: {{ trashcan.trash }}<br>
 								Recycle: {{ trashcan.recycling }}<br>
