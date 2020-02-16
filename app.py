@@ -32,7 +32,7 @@ def index():
 			cans[idn].trash = argument_trash
 			cans[idn].recycling = argument_recycling
 			cans[idn].compost = argument_compost
-			return "200"
+			return "Oh hell yeah"
 
 		except Exception as e:
 			traceback.print_exc()
