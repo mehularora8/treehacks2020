@@ -104,6 +104,28 @@ img{
 	box-shadow: 5px 5px 20px 0 rgba(20,20,20,0.1);
 	display: inline-block;
 	margin: 1vh;
+	position: relative;
+}
+
+.dustbin-outline{
+	width: 40%;
+	height: 50%;
+	margin-left: 30%;
+	margin-top: 5%;
+	border-style: solid;
+	background-color: green;
+	border-color: black;
+	border-top: none;
+	border-left: 10%;
+	border-right: 10%;
+	border-bottom: 10%;
+	position: relative;
+}
+
+.dustbin-inside{
+	width: 100%;
+	margin-bottom: 0%;
+	background-color: white;
 }
 
 #dashboard-heading{

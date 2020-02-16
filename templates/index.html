@@ -6,6 +6,9 @@
 	<!--<link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>-->
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/index.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/quicksand.css') }}">
+	<style>
+
+	</style>
 </head>
 <body>
 	<div id = "container">
@@ -31,21 +34,30 @@
 						<div class = "dustbin">
 							<div class = "dustbin-header">Trashcan {{ i }}</div>
 							<div class = "dustbin-data">
-								Trash: {{ bins[i].trash }}<br>
+								Trash: {{ bins[i].trash }}
+							</div>
+							<div class = "dustbin-outline">
+								<div class="dustbin-inside" style="height: {{ 100 - bins[i].trash }}%"></div>
 							</div>
 						</div>
 						<div class = "dustbin">
 							<div class = "dustbin-header">Trashcan {{ i }}</div>
 							<div class = "dustbin-data">
-								Recycle: {{ bins[i].recycling }}<br>
+								Recycle: {{ bins[i].recycling }}
+							</div>
+							<div class = "dustbin-outline">
+								<div class="dustbin-inside" style="height: {{ 100 - bins[i].recycling }}%"></div>
 							</div>
 						</div>
 						<div class = "dustbin">
 							<div class = "dustbin-header">Trashcan {{ i }}</div>
 							<div class = "dustbin-data">
-								Compost: {{ bins[i].compost }}<br>
+								Compost: {{ bins[i].compost }}
 							</div>
-						</div>
+							<div class = "dustbin-outline">
+								<div class="dustbin-inside" style="height: {{ 100 - bins[i].compost }}%"></div>
+							</div>
+						</div><br>
 						{%endfor%}
 					</div>
 				</div>

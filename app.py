@@ -22,9 +22,9 @@ def index():
 	elif request.method == "POST": 
 		try:
 			idn = request.form['id']
-			argument_recycling = request.form["recycling"]
-			argument_compost = request.form["compost"]
-			argument_trash = request.form["trash"]
+			argument_recycling = int(request.form["recycling"])
+			argument_compost = int(request.form["compost"])
+			argument_trash = int(request.form["trash"])
 
 			if idn not in cans:
 				cans[idn] = Trashcan(idn)
