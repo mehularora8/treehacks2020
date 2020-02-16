@@ -5,6 +5,11 @@ body{
 	overflow: hidden;
 }
 
+img{
+	height: 6vh;
+	width: 6vh;
+}
+
 #container{
 	width: 100vw;
 	height: 100vh;
@@ -19,21 +24,52 @@ body{
 
 #info{
 	width: 80vw;
-	height: 100vw;
+	height: 100vh;
 	display: inline-block;
 }
 
 #topbar{
 	height: 10vh;
-	width: 100vw;
+	width: 80vw;
 	border-bottom: 1px solid #d0d3d6;
 	z-index: 1;
 }
 
-#data{
-	height: 90vh;
+#user{
+	position: absolute;
+	top: 2vh;
+	right: 1vh;
+	width: 8vh;
+	height: 8vh;
+	background-size: cover;
+	background-position: center;
+}
+
+#logo{
+	width: 10vw;
+	height: 10vh;
+	position: absolute;
+	bottom: 1vh;
+	right: 1vh;
+	background-image: url(logo.png);
+}
+
+#logo img{
+	height: 9vh;
+	width: 9vw;
+}
+
+#heading{
+	height: 10vh;
 	width: 80vw;
-	background: #f7f7f7;
+	text-align: center;
+	line-height: 10vh;
+	font-size: 4vh;
+}
+
+#data{
+	height: 80vh;
+	width: 80vw;
 	text-align: center;
 }
 
@@ -41,13 +77,15 @@ body{
 	width: 70vw;
 	height: 60vh;
 	display: inline-block;
-	margin-top: 15vh;
+	margin-top: 5vh;
 }
 
 #metrics{
 	width: 70vw;
-	height: 60vh;
+	height: 30vh;
 	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .dustbin-header{
@@ -63,7 +101,7 @@ body{
 	width: 15vw;
 	height: 30vh;
 	background-color: white;
-	box-shadow: 1px 2px rgba(0, 0, 0, 0.2);
+	box-shadow: 5px 5px 20px 0 rgba(20,20,20,0.1);
 	display: inline-block;
 	margin: 1vh;
 }
@@ -75,6 +113,12 @@ body{
 	line-height: 10vh;
 	font-weight: bold;
 	text-align: center;
+}
+
+#percentage{
+	height:10vh; 
+	width:3vh;
+	border: 1px solid black;
 }
 
 /*Media query for phone devices*/
