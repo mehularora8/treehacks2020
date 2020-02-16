@@ -32,8 +32,11 @@ def index():
 		if trashcan.query.filter_by(dustbin_id = dustbin_id).first() is None:
 			new_dustbin = trashcan(dustbin_id = dustbin_id, trash = argument_trash, compost = argument_compost, recycling = argument_recycling)
 			db.session.add(new_dustbin)
-			db.session.commit()
-			return "New record added"
+			try :
+				db.session.commit()
+				return "New record added"
+			except e:
+				return str(e)
 
 		else:
 			target_dustbin = trashcan.query.get(dustbin_id)
@@ -46,8 +49,8 @@ def index():
 				db.session.commit()
 				return "200\n"
 
-			except:
-				return "Internal Failure"
+			except e:
+				return str(e)
 
 if __name__ == "__main__":
 	app.run(debug = True)
