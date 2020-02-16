@@ -49,6 +49,5 @@ def index():
 			except:
 				return "Internal Failure"
 
-
 if __name__ == "__main__":
 	app.run(debug = True)
