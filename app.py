@@ -8,7 +8,7 @@ db = SQLAlchemy(app)
 
 
 class trashcan(db.Model):
-	dustbin_id = db.Column(db.String(10), primary_key = True, unique = True)
+	dustbin_id = db.Column(db.Integer, primary_key = True, unique = True)
 	trash = db.Column(db.Integer, nullable = True)
 	compost = db.Column(db.Integer, nullable = True)
 	recycling = db.Column(db.Integer, nullable = True)
@@ -19,18 +19,26 @@ class trashcan(db.Model):
 @app.route('/', methods = ['POST', 'GET'])
 def index():
 	
-	if request.method == 'POST':
-		dustbin_id = request.get.args('id')
-		target_dustbin = trashcan.query.get(id)
-		target_dustbin.trash = request.get.args('trash')
-		target_dustbin.compost = request.get.args('compost')
-		target_dustbin.recycling = request.get.args('recycling')
+	if request.method == 'GET':
+		dustbin_id = request.args.get('id')
+		argument_recycling = request.args.get('recycling')
+		argument_compost = request.args.get('compost')
+		argument_trash = request.args.get('trash')
 
+		target_dustbin = trashcan.query.get(dustbin_id)
+
+		target_dustbin.trash = argument_trash
+		target_dustbin.compost = argument_compost
+		target_dustbin.recycling = argument_recycling
+		
 		try:
 			db.session.commit()
-			return redirect('/')
+			bins = trashcan.query.all()
+			return render_template('index.html', bins = bins)
+
 		except:
 			return "Internal Failure"
+
 		
 	else: 
 		bins = trashcan.query.all()

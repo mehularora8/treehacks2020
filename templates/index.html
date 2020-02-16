@@ -5,6 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="index.css">
 	<!--<link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>-->
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/index.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/quicksand.css') }}">
 </head>
 <body>
 	<div id = "container">
@@ -14,15 +15,19 @@
 		<div id = "info">
 			<div id = "topbar"></div>
 			<div id = "data">
-				<div id = "metrics">
-					{% for trashcan in bins%}
-					<tr>
-						<td> {{ trashcan.id }}</td>
-						<td> {{ trashcan.trash }}</td>
-						<td> {{ trashcan.recycle }}</td>
-						<td> {{ trashcan.compost }}</td>
-					</tr>
-					{%endfor%}
+				<div id = "metrics-container">
+					<div id = "metrics">
+						{% for trashcan in bins%}
+						<div class = "dustbin">
+							<div class = "dustbin-header">ID: {{ trashcan.dustbin_id }}</div>
+							<div class = "dustbin-data">
+								Trash: {{ trashcan.trash }}<br>
+								Recycle: {{ trashcan.recycling }}<br>
+								Compost: {{ trashcan.compost }}<br>
+							</div>
+						</div>
+						{%endfor%}
+					</div>
 				</div>
 			</div>
 		</div>

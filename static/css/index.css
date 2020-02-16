@@ -2,6 +2,7 @@ body{
 	padding: 0;
 	margin:0;
 	font-family: "Quicksand", sans-serif;
+	overflow: hidden;
 }
 
 #container{
@@ -36,12 +37,23 @@ body{
 	text-align: center;
 }
 
-#metrics{
+#metrics-container{
 	width: 70vw;
 	height: 60vh;
 	border: 1px solid black;
 	display: inline-block;
 	margin-top: 15vh;
+}
+
+#metrics{
+	width: 70vw;
+	height: 60vh;
+	border: 1px solid black;
+	display: flex;
+}
+
+.dustbin{
+	
 }
 
 #dashboard-heading{
