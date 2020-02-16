@@ -1,5 +1,5 @@
 const int TRIG_PIN = 4;
-const int ECHO_PIN = 5;
+const int ECHO_PIN = 15;
 
 // Anything over 400 cm (23200 us pulse) is "out of range"
 const unsigned int MAX_DIST = 23200;

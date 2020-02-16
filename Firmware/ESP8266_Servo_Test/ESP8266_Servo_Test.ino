@@ -3,7 +3,7 @@
 Servo servo;
 
 void setup() {
-  servo.attach(15);
+  servo.attach(12);
 }
 
 void loop() {
