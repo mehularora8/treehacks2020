@@ -5,8 +5,8 @@ import traceback
 app = Flask(__name__)
 
 class Trashcan():
-	def __init__(self, id):
-		self.id = id
+	def __init__(self, idn):
+		self.id = idn
 		self.trash = 0
 		self.recycling = 0
 		self.compost = 0
@@ -17,21 +17,22 @@ cans = {}
 def index():
 	
 	if request.method == 'GET':
-		return render_template('index.html', bins = cans)
+		return render_template('index.html', bins=cans)
 
 	elif request.method == "POST": 
 		try:
-			dustbin_id = request.form['id']
+			idn = request.form['id']
 			argument_recycling = request.form["recycling"]
 			argument_compost = request.form["compost"]
 			argument_trash = request.form["trash"]
 
-			if id not in cans:
-				cans[id] = Trashcan(id)
+			if idn not in cans:
+				cans[idn] = Trashcan(idn)
 			
-			cans[id].trash = argument_trash
-			cans[id].recycling = argument_recycling
-			cans[id].compost = argument_compost
+			cans[idn].trash = argument_trash
+			cans[idn].recycling = argument_recycling
+			cans[idn].compost = argument_compost
+			return "200"
 
 		except Exception as e:
 			traceback.print_exc()
