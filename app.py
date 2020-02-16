@@ -35,7 +35,7 @@ def index():
 				new_dustbin = trashcan(dustbin_id = dustbin_id, trash = argument_trash, compost = argument_compost, recycling = argument_recycling)
 				db.session.add(new_dustbin)
 				# try :
-				db.session.commit()
+				# db.session.commit()
 				return "New record added"
 				# except e:
 				# 	return str(e)
@@ -48,7 +48,7 @@ def index():
 				target_dustbin.recycling = argument_recycling
 				
 				#try:
-				db.session.commit()
+				# db.session.commit()
 				return "200\n"
 
 				# except e:
