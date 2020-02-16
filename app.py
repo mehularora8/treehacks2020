@@ -22,7 +22,7 @@ def index():
 	if request.method == 'POST':
 		dustbin_id = request.args.get('id')
 
-		if target_dustbin is None:
+		if dustbin_id is None:
 			return render_template('index.html', bins = bins)
 		
 		argument_recycling = request.args.get('recycling')
@@ -32,10 +32,12 @@ def index():
 		target_dustbin = trashcan.query.get(dustbin_id)
 
 		
-
-		target_dustbin.trash = argument_trash
-		target_dustbin.compost = argument_compost
-		target_dustbin.recycling = argument_recycling
+		if argument_trash:
+			target_dustbin.trash = argument_trash
+		if argument_recycling:
+			target_dustbin.compost = argument_compost
+		if argument_compost:
+			target_dustbin.recycling = argument_recycling
 		
 		try:
 			db.session.commit()
@@ -50,6 +52,8 @@ def index():
 		bins = trashcan.query.all()
 		return render_template('index.html', bins = bins)
 
+
+db.create_all()
 
 if __name__ == "__main__":
 	app.run(debug = True)
