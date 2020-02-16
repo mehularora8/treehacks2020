@@ -19,13 +19,19 @@ class trashcan(db.Model):
 @app.route('/', methods = ['POST', 'GET'])
 def index():
 	
-	if request.method == 'GET':
+	if request.method == 'POST':
 		dustbin_id = request.args.get('id')
+
+		if target_dustbin is None:
+			return render_template('index.html', bins = bins)
+		
 		argument_recycling = request.args.get('recycling')
 		argument_compost = request.args.get('compost')
 		argument_trash = request.args.get('trash')
 
 		target_dustbin = trashcan.query.get(dustbin_id)
+
+		
 
 		target_dustbin.trash = argument_trash
 		target_dustbin.compost = argument_compost
